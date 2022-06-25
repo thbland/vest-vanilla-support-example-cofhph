@@ -1,0 +1,8 @@
+{
+  "name": "js-q1e89n",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "vest": "^2.2.3"
+  }
+}

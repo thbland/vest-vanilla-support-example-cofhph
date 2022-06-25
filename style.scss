@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap');
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background: linear-gradient(#A2999E,#C6C7C4);
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    font-family: 'Rubik',sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    text-align: center;
+}
+
+form {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgb(97,97,97);
+    color: rgb(54,54,54);
+    font-size: 16px;
+    max-width: 250px;
+    padding: 25px;
+
+    &.valid button {
+        background: #6CCC59;
+    }
+
+    &.invalid button {
+        background: rgb(204,89,89);
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        padding-top: 15px;
+        position: relative;
+
+        &:before {
+            content: attr(data-placeholder);
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+        }
+
+        small {
+          display: block;
+          font-size: 12px;
+        }
+
+        input + small {
+          display: inline;
+        }
+
+        input {
+            $border-color: #cccccc;
+            border: 0;
+            border-bottom: 1px solid $border-color;
+            outline: none;
+            transition: .2s ease;
+
+            &:focus {
+                border-bottom-color: darken($border-color,20);
+            }
+        }
+
+        &:after {
+            content: attr(data-msg);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            font-size: 11px;
+        }
+
+        &.warning {
+            $color-warning: #FF9E46;
+
+            &:after {
+                color: $color-warning;
+            }
+
+            input {
+                border-bottom-color: $color-warning;
+            }
+        }
+
+        &.invalid {
+            $color-invalid: #F45A95;
+
+            &:after {
+                color: $color-invalid;
+            }
+
+            input {
+                border-bottom-color: $color-invalid;
+            }
+        }
+
+        &.valid {
+            $color-valid: #6CCC59;
+
+            &:after {
+                color: $color-valid;
+            }
+
+            input {
+                border-bottom-color: $color-valid;
+            }
+        }
+    }
+
+    button {
+        $button-color: #00A6CC;
+        background: $button-color;
+        border: 0;
+        border-radius: 15px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 11px;
+        margin-top: 15px;
+        outline: none;
+        padding: 10px;
+        transition: .2s;
+        width: 100%;
+
+        &:hover {
+            background: lighten($button-color,10);
+        }
+
+        &:active {
+            background: darken($button-color,10);
+        }
+    }
+}
